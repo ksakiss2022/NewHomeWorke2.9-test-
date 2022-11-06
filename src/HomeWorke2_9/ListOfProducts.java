@@ -4,17 +4,17 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ListOfProducts  {
-    public static Set<Products> listOfProducts=new HashSet<>();
+    public static Set<Product> listOfProducts=new HashSet<>();
 
 
 
     public static void printListOfProducts() {
         System.out.println("Список продуктов: ");
-        for (Products products:listOfProducts){
+        for (Product products:listOfProducts){
             System.out.println(products.getProduct()+"-"+" за "+products.getPrice()+" руб."+products.getQuantity()+"кг./шт.");
         }
     }
-    protected static void addListOfProducts(Products newProducts) throws CheckingProductRepeatsExeption {
+    protected static void addListOfProducts(Product newProducts) throws CheckingProductRepeatsExeption {
         if (!listOfProducts.add(newProducts)){
             throw new CheckingProductRepeatsExeption("Такой продукт уже есть в списке.");
         }
@@ -34,7 +34,7 @@ public class ListOfProducts  {
     }
 
     public static boolean chekList(String productToCheck){
-        for (Products product :listOfProducts){
+        for (Product product :listOfProducts){
             if (product.getProduct().equals(productToCheck)){
                 System.out.println(productToCheck+" продукт куплен.");
                 return true;

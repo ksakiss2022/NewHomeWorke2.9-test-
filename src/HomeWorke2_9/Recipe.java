@@ -4,40 +4,37 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-import static HomeWorke2_9.RecipeBook.recipe;
 
-public class Recipes{
+public class Recipe {
 
 
-    private final Set<Products> products = new HashSet<>();
+    private static final Set<Product> products = new HashSet<>();
     private float costOfAllProducts;
-
     private final String recipeName;
 
 
-    public Recipes(String recipeName) {
-        this.recipeName = recipeName;
-        this.costOfAllProducts=0;
-        recipe.add(this);
+    public Recipe(String recipeName) {
+        this.recipeName = String.valueOf(recipeName);
+        this.costOfAllProducts = 0;
 
     }
-    public void addProductInRecipe(Products products)  {
-        if (getProducts().add(products)){
-            throw new RuntimeException("Такой продукт уже есть в списке.");
+
+
+
+
+
+    public static void addProductInRecipe(Product newProductsInRecipe) throws CheckingProductRepeatsExeption{
+        if (!products.add(newProductsInRecipe)) {
+            throw new CheckingProductRepeatsExeption("Такой продукт уже есть в рецепте.");
         }
 
-
-
-        getProducts().add(products);
-        costOfAllProducts=costOfAllProducts+products.getPrice()+products.quantity;
     }
 
 
-
-
-    public Set<Products> getProducts() {
-        return products;
+    public static Set<Product> getProducts() {
+        return getProducts();
     }
+
 
     public float getCostOfAllProducts() {
         return costOfAllProducts;
@@ -46,6 +43,7 @@ public class Recipes{
     public String getRecipeName() {
         return recipeName;
     }
+
     @Override
     public String toString() {
         return "Recipes{" +
@@ -59,8 +57,10 @@ public class Recipes{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Recipes recipes = (Recipes) o;
-        return Float.compare(recipes.costOfAllProducts, costOfAllProducts) == 0 && products.equals(recipes.products) && recipeName.equals(recipes.recipeName);
+        Recipe recipes = (Recipe) o;
+        return Float.compare(recipes.costOfAllProducts, costOfAllProducts) == 0
+                && products.equals(recipes.products)
+                && recipeName.equals(recipes.recipeName);
     }
 
     @Override
