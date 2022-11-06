@@ -3,19 +3,15 @@ package transport;
 import Driver.Driver;
 import HomeWorke2_7.PassDiagnosticsException;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public abstract class Transport {
 
 
-    private final List<Driver<?>> drivers = new ArrayList<>();
-    private final List<Mechanic<?>> mechanics = new ArrayList<>();
-
-
-    private final List<RaceSponsor> raceSponsors = new ArrayList<>();
+ //   private final List<Driver<?>> drivers = new ArrayList<>();
+    private final Set<Driver<?>> drivers = new HashSet<>();
+    private final Set<Mechanic<?>> mechanics = new HashSet<>();
+    private final Set<RaceSponsor> raceSponsors = new HashSet<>();
 
     public void addDriver(Driver<?> ...drivers) {
 
@@ -110,7 +106,7 @@ public abstract class Transport {
     public int getMovementSpeed() {
         return movementSpeed;
     }
-    public List<Mechanic<?>> getMechanics() {
+    public Set<Mechanic<?>> getMechanics() {
         return mechanics;
     }
 
@@ -126,11 +122,11 @@ public abstract class Transport {
                 ", цвет: " + color;
     }
 
-    public List<RaceSponsor> getRaceSponsors() {
+    public Set<RaceSponsor> getRaceSponsors() {
         return raceSponsors;
     }
 
-    public List<Driver<?>> getDrivers() {
+    public Set<Driver<?>> getDrivers() {
         return drivers;
     }
 
