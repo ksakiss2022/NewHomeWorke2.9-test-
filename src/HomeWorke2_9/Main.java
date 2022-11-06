@@ -110,9 +110,6 @@ public class Main {
 
         System.out.println(createSet());
 
-       // Set<Recipe> recipesBook = new HashSet<>();
-        //recipesBook.add((Recipe) borsh);
-        //recipesBook.add((Recipe) sup);
-        //recipesBook.add(svekolnik);
+
     }
 }
