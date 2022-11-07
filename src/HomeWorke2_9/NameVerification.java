@@ -1,11 +1,11 @@
- package HomeWorke2_9;
+package HomeWorke2_9;
 
- public class NameVerification extends Exception {
-     public NameVerification() {
+public class NameVerification extends Exception {
+    public NameVerification() {
         super();
     }
 
-     public NameVerification(String massage) {
+    public NameVerification(String massage) {
         super(massage);
     }
- }
+}

@@ -32,7 +32,7 @@ public class Passport {
     // Если объект не найден, возвращает null.
     private int number;
     private String lastName;
-    private String firstName ;
+    private String firstName;
     private String patronymic;
     private String dataOfBirth;
 
@@ -42,7 +42,7 @@ public class Passport {
     public Passport(int number, String lastName, String firstName, String dataOfBirth) {
         this.number = number;
         this.lastName = lastName;
-        this.firstName  = firstName;
+        this.firstName = firstName;
         this.patronymic = null;
         this.dataOfBirth = dataOfBirth;
     }
@@ -61,7 +61,7 @@ public class Passport {
         if (firstName == null && firstName.isEmpty() && firstName.isBlank()) {
             throw new NameVerification("Имя введено не корректно.");
         } else {
-            this.firstName  = firstName;
+            this.firstName = firstName;
         }
 
         this.patronymic = patronymic;
@@ -133,11 +133,11 @@ public class Passport {
     }
 
     public String getName() {
-        return firstName ;
+        return firstName;
     }
 
     public void setName(String name) {
-        this.firstName  = name;
+        this.firstName = name;
     }
 
     public String getPatronymic() {
@@ -174,12 +174,12 @@ public class Passport {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Passport passport = (Passport) o;
-        return number == passport.number && lastName.equals(passport.lastName) && firstName .equals(passport.firstName ) && patronymic.equals(passport.patronymic) && dataOfBirth.equals(passport.dataOfBirth);
+        return number == passport.number && lastName.equals(passport.lastName) && firstName.equals(passport.firstName) && patronymic.equals(passport.patronymic) && dataOfBirth.equals(passport.dataOfBirth);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(number, lastName, firstName , patronymic, dataOfBirth);
+        return Objects.hash(number, lastName, firstName, patronymic, dataOfBirth);
     }
 
     @Override
@@ -187,7 +187,7 @@ public class Passport {
         return "Passport{" +
                 "number=" + number +
                 ", surname='" + lastName + '\'' +
-                ", name='" + firstName  + '\'' +
+                ", name='" + firstName + '\'' +
                 ", patronymic='" + patronymic + '\'' +
                 ", dataOfBirth='" + dataOfBirth + '\'' +
                 '}';

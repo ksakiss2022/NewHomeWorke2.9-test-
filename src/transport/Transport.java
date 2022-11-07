@@ -8,22 +8,22 @@ import java.util.*;
 public abstract class Transport {
 
 
- //   private final List<Driver<?>> drivers = new ArrayList<>();
-     private final Set<Driver<?>> drivers = new HashSet<>();
-     private final Set<Mechanic<?>> mechanics = new HashSet<>();
-     private final Set<RaceSponsor> raceSponsors = new HashSet<>();
+    //   private final List<Driver<?>> drivers = new ArrayList<>();
+    private final Set<Driver<?>> drivers = new HashSet<>();
+    private final Set<Mechanic<?>> mechanics = new HashSet<>();
+    private final Set<RaceSponsor> raceSponsors = new HashSet<>();
 
-     public void addDriver(Driver<?> ...drivers) {
+    public void addDriver(Driver<?>... drivers) {
 
-         this.drivers.addAll(Arrays.asList(drivers));
-     }
+        this.drivers.addAll(Arrays.asList(drivers));
+    }
 
-     public void addMechanic(Mechanic<?>... mechanics) {
+    public void addMechanic(Mechanic<?>... mechanics) {
         this.mechanics.addAll(Arrays.asList(mechanics));
     }
 
-     public void addRaceSponsor(RaceSponsor... raceSponsor) {
-       this.raceSponsors.addAll(Arrays.asList(raceSponsor));
+    public void addRaceSponsor(RaceSponsor... raceSponsor) {
+        this.raceSponsors.addAll(Arrays.asList(raceSponsor));
     }
 
     private String brand;
@@ -59,11 +59,7 @@ public abstract class Transport {
         setEngineCapacity(engineCapacity);
     }
 
-    public Transport(String brand,
-                     String model,
-                     int productionYear,
-                     String productionCountry,
-                     int movementSpeed) {
+    public Transport(String brand, String model, int productionYear, String productionCountry, int movementSpeed) {
         setBrand(brand);
         setModel(model);
         this.productionYear = productionYear;
@@ -71,12 +67,7 @@ public abstract class Transport {
         setMovementSpeed(movementSpeed);
     }
 
-    public Transport(String brand,
-                     String model,
-                     int productionYear,
-                     String productionCountry,
-                     String color,
-                     int movementSpeed) {
+    public Transport(String brand, String model, int productionYear, String productionCountry, String color, int movementSpeed) {
         this.brand = brand;
         this.model = model;
         this.productionYear = productionYear;
@@ -106,27 +97,21 @@ public abstract class Transport {
     public int getMovementSpeed() {
         return movementSpeed;
     }
-     public Set<Mechanic<?>> getMechanics() {
+
+    public Set<Mechanic<?>> getMechanics() {
         return mechanics;
     }
 
     @Override
     public String toString() {
-        return "Транспорт: " +
-                ", марка: " + brand +
-                ", модель: " + model +
-                ", мощность двигателя =" + engineCapacity +
-                ", скорость движения =" + movementSpeed +
-                ", год выпуска: " + productionYear +
-                ", страна производства: " + productionCountry + '\'' +
-                ", цвет: " + color;
+        return "Транспорт: " + ", марка: " + brand + ", модель: " + model + ", мощность двигателя =" + engineCapacity + ", скорость движения =" + movementSpeed + ", год выпуска: " + productionYear + ", страна производства: " + productionCountry + '\'' + ", цвет: " + color;
     }
 
-     public Set<RaceSponsor> getRaceSponsors() {
+    public Set<RaceSponsor> getRaceSponsors() {
         return raceSponsors;
     }
 
-     public Set<Driver<?>> getDrivers() {
+    public Set<Driver<?>> getDrivers() {
         return drivers;
     }
 
