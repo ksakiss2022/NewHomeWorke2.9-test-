@@ -1,11 +1,11 @@
-package HomeWorke2_9;
+ package HomeWorke2_9;
 
-public class LastNameVerification extends Exception{
-    public LastNameVerification() {
+ public class LastNameVerification extends Exception{
+     public LastNameVerification() {
         super();
     }
 
-    public LastNameVerification(String massage) {
+     public LastNameVerification(String massage) {
         super(massage);
     }
-}
+ }

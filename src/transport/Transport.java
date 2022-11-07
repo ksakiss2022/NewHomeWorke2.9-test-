@@ -9,20 +9,20 @@ public abstract class Transport {
 
 
  //   private final List<Driver<?>> drivers = new ArrayList<>();
-    private final Set<Driver<?>> drivers = new HashSet<>();
-    private final Set<Mechanic<?>> mechanics = new HashSet<>();
-    private final Set<RaceSponsor> raceSponsors = new HashSet<>();
+     private final Set<Driver<?>> drivers = new HashSet<>();
+     private final Set<Mechanic<?>> mechanics = new HashSet<>();
+     private final Set<RaceSponsor> raceSponsors = new HashSet<>();
 
-    public void addDriver(Driver<?> ...drivers) {
+     public void addDriver(Driver<?> ...drivers) {
 
-        this.drivers.addAll(Arrays.asList(drivers));
-    }
+         this.drivers.addAll(Arrays.asList(drivers));
+     }
 
-    public void addMechanic(Mechanic<?>... mechanics) {
+     public void addMechanic(Mechanic<?>... mechanics) {
         this.mechanics.addAll(Arrays.asList(mechanics));
     }
 
-    public void addRaceSponsor(RaceSponsor... raceSponsor) {
+     public void addRaceSponsor(RaceSponsor... raceSponsor) {
        this.raceSponsors.addAll(Arrays.asList(raceSponsor));
     }
 
@@ -106,7 +106,7 @@ public abstract class Transport {
     public int getMovementSpeed() {
         return movementSpeed;
     }
-    public Set<Mechanic<?>> getMechanics() {
+     public Set<Mechanic<?>> getMechanics() {
         return mechanics;
     }
 
@@ -122,11 +122,11 @@ public abstract class Transport {
                 ", цвет: " + color;
     }
 
-    public Set<RaceSponsor> getRaceSponsors() {
+     public Set<RaceSponsor> getRaceSponsors() {
         return raceSponsors;
     }
 
-    public Set<Driver<?>> getDrivers() {
+     public Set<Driver<?>> getDrivers() {
         return drivers;
     }
 
