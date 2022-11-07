@@ -2,7 +2,7 @@ package HomeWorke2_9;
 
 import java.util.Objects;
 
-public class Products {
+public class Product {
 
 //Напишите простое приложение для формирования списка продуктов.
 //
@@ -20,20 +20,20 @@ public class Products {
 //Названия всех продуктов должны быть на русском языке.
 
     private static final String PRODUCTS_SYMBOL = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ-";
-    protected String product;
-    protected float price;
-    protected int quantity;
+    private String product;
+    private float price;
+    private int quantity;
 
-    public Products(String product, float price, int quantity) {
+    public Product(String product, float price, int quantity) {
         this.product = product;
         this.price = price;
         this.quantity = quantity;
     }
 
-    public static boolean valiDateProduct(Products product) {
+    public static boolean valiDateProduct(Product product) {
         try {
             chek(String.valueOf(product));
-        } catch (ChekingProductExeption e) {
+        } catch (CheckingForSpellingCorrectness e) {
             System.out.println(e.getMessage());
             return false;
         }
@@ -41,11 +41,11 @@ public class Products {
     }
 
     private static void chek(String product)
-            throws ChekingProductExeption {
+            throws CheckingForSpellingCorrectness {
         // if (product == null && product.isBlank() && product.isEmpty() && price <= 0 && quantity <= 0)
 
         if (!valiDate(product)) {
-            throw new ChekingProductExeption("Не верно задан продукт" + product);
+            throw new CheckingForSpellingCorrectness("Не верно задан продукт" + product);
         }
 
 
@@ -81,7 +81,7 @@ public class Products {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Products products = (Products) o;
+        Product products = (Product) o;
         return Float.compare(products.price, price) == 0 && quantity == products.quantity && product.equals(products.product);
     }
 
@@ -89,6 +89,7 @@ public class Products {
     public int hashCode() {
         return Objects.hash(product, price, quantity);
     }
+
     public void printProducts() {
         System.out.println("Продукт- " + product + ",");
         System.out.println("стоимость - " + price + ", ");
@@ -97,6 +98,14 @@ public class Products {
     }
 
 
+    @Override
+    public String toString() {
+        return "Products{" +
+                "product='" + product + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                '}';
+    }
 }
 
 

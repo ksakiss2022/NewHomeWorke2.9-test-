@@ -1,31 +1,33 @@
 package HomeWorke2_9;
 
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class RecipeBook {
-    public static Set<Recipes> recipe = new HashSet<>();
+    public static Set<Recipe> recipesBook = new HashSet<>();
 
-    public static void addRecipes(Recipes recipes) {
-        for (var BookRecipeCollection : recipe) {
-            if (BookRecipeCollection.getRecipeName().equals(recipes.getRecipeName())) {
-                throw new RuntimeException(" Рецепт есть. ");
-            }
+    protected void addRecipes(Recipe newRecipe) throws CheckingForDoublingOfTheRecipe {
 
+        if (!recipesBook.contains(newRecipe)) {
+            recipesBook.add(newRecipe);
+        } else {
+            throw new CheckingForDoublingOfTheRecipe(" Рецепт есть. ");
         }
-        recipe.add(recipes);
+
     }
 
-    public static void printRecipesBook() {
+
+    public static void printRecipesBook(Set<String> borsh, Set<String> sup, Set<String> svekolnik) {
         System.out.println("Список рецептов : ");
-        for (Recipes recipe : recipe) {
+        for (Recipe recipe : recipesBook) {
             System.out.println(recipe.getRecipeName() + "-");
-//            for (Map.Entry<Products, Integer> entry : recipe.getProducts(),recipe.getCostOfAllProducts()){
-//                System.out.println(entry.getKey() + "- " + entry.getValue() + "кг.");
-//            }
-            System.out.println("Сумма продуктов " + recipe.getCostOfAllProducts() + "руб.");
+
+            //  for (Map.Entry<Products, Integer> entry : entrySet()) {
+            //      System.out.println(entry.getKey() + "- " + entry.getValue() + "кг.");
+            //  }
+            // System.out.println("Сумма продуктов " + recipe.getCostOfAllProducts() + "руб.");
 
         }
     }
 }
+
