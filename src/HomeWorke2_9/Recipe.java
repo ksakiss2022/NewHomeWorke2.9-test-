@@ -8,19 +8,19 @@ import java.util.Set;
 public class Recipe {
 
 
-    private static final Set<Product> products = new HashSet<>();
+    private final Set<Product> products = new HashSet<>();
     private float costOfAllProducts;
     private final String recipeName;
 
 
     public Recipe(String recipeName) {
-        this.recipeName = String.valueOf(recipeName);
+        this.recipeName = recipeName;
         this.costOfAllProducts = 0;
 
     }
 
 
-    public static void addProductInRecipe(Product newProductsInRecipe) throws CheckingProductRepeatsExeption {
+    public void addProductInRecipe(Product newProductsInRecipe) throws CheckingProductRepeatsExeption {
         if (!products.add(newProductsInRecipe)) {
             throw new CheckingProductRepeatsExeption("Такой продукт уже есть в рецепте.");
         }

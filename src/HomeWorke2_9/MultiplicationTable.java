@@ -7,7 +7,7 @@ import java.util.Set;
 public class MultiplicationTable {
     private static Set<String> setForMultiplication = new HashSet<>();
 
-    public static String taskПenerator() {
+    public static String taskGenerator() {
         int theFirstMultiplier;
         int theSecondeMultiplier;
         Random ran = new Random();
@@ -19,7 +19,7 @@ public class MultiplicationTable {
     public static void main(String[] args) {
         int count = 0;
         while (count < 15) {
-            String pairNumber = taskПenerator();
+            String pairNumber = taskGenerator();
             String inverseNumber = pairNumber.charAt(2) + "*" + pairNumber.charAt(0);
             if (!setForMultiplication.contains(pairNumber) && !setForMultiplication.contains(inverseNumber)) {
                 setForMultiplication.add(pairNumber);
