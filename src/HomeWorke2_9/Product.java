@@ -20,6 +20,9 @@ public class Product {
 //Названия всех продуктов должны быть на русском языке.
 
     private static final String PRODUCTS_SYMBOL = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ-";
+
+
+
     private String product;
     private float price;
     private int quantity;
@@ -76,18 +79,17 @@ public class Product {
     public int getQuantity() {
         return quantity;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Product products = (Product) o;
-        return Float.compare(products.price, price) == 0 && quantity == products.quantity && product.equals(products.product);
+        Product product1 = (Product) o;
+        return product.equals(product1.product);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(product, price, quantity);
+        return Objects.hash(product);
     }
 
     public void printProducts() {
