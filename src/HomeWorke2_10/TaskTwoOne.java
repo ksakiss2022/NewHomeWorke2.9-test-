@@ -12,20 +12,20 @@ public class TaskTwoOne {
    public static void main (String[]args){
        Random random = new Random();
        var listOne= new java.util.ArrayList<>(List.of(2,4,6,8,10));
-           for (int i=0; 1< 15; i++){
-               listOne.add(random.nextInt(), 5);
+           for (int i=0; i< 15; i++){
+               listOne.add(random.nextInt(19));
        }
        var listTwo= new java.util.ArrayList<>(List.of(2,4,6,8,10));
-       for (int i=0; 1< 15; i++){
-           listTwo.add(random.nextInt(), 5);
+       for (int i=0; i< 15; i++){
+           listTwo.add(random.nextInt( 10));
        }
        var listThree= new java.util.ArrayList<>(List.of(2,4,6,8,10));
-       for (int i=0; 1< 15; i++){
-           listThree.add(random.nextInt(), 5);
+       for (int i=0; i< 15; i++){
+           listThree.add(random.nextInt(10));
        }
        mapFrom.put("Первый список 1:", listOne);
-       mapFrom.put("Первый список 2:", listTwo);
-       mapFrom.put("Первый список 3:", listThree);
+       mapFrom.put("Втотрой список список 2:", listTwo);
+       mapFrom.put("Третий список список 3:", listThree);
        System.out.println(mapFrom);
 
        for (var keySet:mapFrom.keySet()){
