@@ -1,10 +1,11 @@
 package HomeWorke2_10;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class TaskThree {
 
-    private static HashMap<String, Integer> output = new HashMap<>();
+    private static Map<String, Integer> output = new HashMap<>();
 
 
 
@@ -17,8 +18,8 @@ public class TaskThree {
     }
 
 
-    public HashMap<String, Integer> getCollect() {
-        return output;
+    public Map<String, Integer> getCollect() {
+        return (HashMap<String, Integer>) output;
     }
     public static void main(String[] args){
         output.put("ABC",555);
