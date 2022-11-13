@@ -1,14 +1,12 @@
 package HomeWorke2_9;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 
 public class Recipe {
 
-
-    private final Set<Product> products = new HashSet<>();
+private final Map<Product,Integer> products=new HashMap<>();
+    //private final Set<Product> products = new HashSet<>();
     private float costOfAllProducts;
     private final String recipeName;
 
@@ -20,13 +18,33 @@ public class Recipe {
     }
 
 
-    public void addProductInRecipe(Product newProductsInRecipe) throws CheckingProductRepeatsExeption {
-        if (!products.add(newProductsInRecipe)) {
-            throw new CheckingProductRepeatsExeption("Такой продукт уже есть в рецепте.");
+//    public void addProductInRecipe(Product newProductsInRecipe) throws CheckingProductRepeatsExeption {
+//        if (!products.add(newProductsInRecipe)) {
+//            throw new CheckingProductRepeatsExeption("Такой продукт уже есть в рецепте.");
+//        }
+//
+//    }
+//
+//Задание 2
+//Возвращаемся к заданию со списком продуктов и рецептов. Вам необходимо доработать класс рецептов так, чтобы для каждого продукта мы могли записать необходимое количество (например, бананы — 2 штуки).
+//
+//Замените HashSet на HashMap, где в качестве ключа — продукт, а в качестве значения — необходимое количество. Если количество продукта не было передано, сохраните 1.
+//
+//Доработайте подсчет суммарной стоимости рецепта — умножьте стоимость каждого продукта на его количество.
+    public void addProductInRecipe(Product product, int quantity) throws CheckingProductRepeatsExeption {
+        if (products.containsKey(product)) {
+            throw new CheckingProductRepeatsExeption("Что-то пошло не так,проверь. ");
+
+        } else {
+            products.put(product, quantity);
         }
-
     }
-
+public int sumCostOfAllProducts(){
+        int sum=0;
+        for (Product key: products.keySet()){
+            sum+=products.get(key)* key.getPrice();
+        }return sum;
+}
 
     public static Set<Product> getProducts() {
         return getProducts();
