@@ -19,8 +19,8 @@ public class TaskTwoOne {
        //}
        List<Integer> listI=new ArrayList<>(List.of(2,4,6,8,10));
        for (int i = 0; i < listI.size(); i++) {
-           int currentListI= listI.get(i);
-           listI.size();
+        //   int currentListI= listI.get(i);
+           //      listI.size();
        }
 //       var listOne= new java.util.ArrayList<>(List.of(2,4,6,8,10));
 //           for (int i=0; i< 15; i++){

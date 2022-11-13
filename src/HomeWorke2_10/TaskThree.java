@@ -19,7 +19,7 @@ public class TaskThree {
 
 
     public Map<String, Integer> getCollect() {
-        return (HashMap<String, Integer>) output;
+        return  output;
     }
     public static void main(String[] args){
         output.put("ABC",555);
